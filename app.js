@@ -1,8 +1,6 @@
 const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 
-
-// Init weather object
 const weather = new Weather(weatherLocation.zip);
 const ui = new UI();
 
@@ -77,4 +75,13 @@ function windDirectionFromDegrees(deg) {
         return 'NNW';
     }
     return 'N';
+}
+
+function getTime(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours();
+    let minutes = "0" + date.getMinutes();
+
+    // Will display time in 10:30 format
+    return hours + ':' + minutes.substr(-2);
 }

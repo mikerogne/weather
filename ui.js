@@ -9,6 +9,8 @@ class UI {
         this.pressure = document.getElementById('w-pressure');
         this.windSpeed = document.getElementById('w-wind-speed');
         this.windDirection = document.getElementById('w-wind-direction');
+        this.sunrise = document.getElementById('w-sunrise');
+        this.sunset = document.getElementById('w-sunset');
     }
 
     paint(weather) {
@@ -19,5 +21,7 @@ class UI {
         this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`
         this.windSpeed.textContent = `Wind Speed: ${weather.wind.speed} mph`
         this.windDirection.textContent = `Wind Direction: ${windDirectionFromDegrees(weather.wind.deg)}`
+        this.sunrise.textContent = `Sunrise: ${getTime(weather.sys.sunrise)}`
+        this.sunset.textContent = `Sunset: ${getTime(weather.sys.sunset)}`
     }
 }
