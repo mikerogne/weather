@@ -1,5 +1,9 @@
+const storage = new Storage();
+const weatherLocation = storage.getLocationData();
+
+
 // Init weather object
-const weather = new Weather('64701');
+const weather = new Weather(weatherLocation.zip);
 const ui = new UI();
 
 // Get weather on DOM load
@@ -7,8 +11,10 @@ document.addEventListener('DOMContentLoaded', getWeather);
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
     e.preventDefault;
-    const zipCode = document.getElementById('zip').value;
-    storage.setLocationData(zip, zipCode);
+    const zip = document.getElementById('zip').value;
+
+    weather.changeLocation(zip);
+    storage.setLocationData(zip);
     getWeather();
 
     // JQuery!

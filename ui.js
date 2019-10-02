@@ -12,9 +12,8 @@ class UI {
     }
 
     paint(weather) {
-        this.location.textContent = `${weather.name}, ${weather.sys.country}`;
+        this.location.textContent = `${weather.name}`;
         this.desc.textContent = weather.weather[0].main;
-        this.fullDesc.textContent = weather.weather[0].description;
         this.string.textContent = `${weather.main.temp}\u00B0F`;
         this.humidity.textContent = `Humidity: ${weather.main.humidity}%`
         this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`
