@@ -7,7 +7,7 @@ const ui = new UI();
 // Get weather on DOM load
 document.addEventListener('DOMContentLoaded', getWeather);
 
-document.getElementById('w-change-btn').addEventListener('click', (e) => {
+document.getElementById('w-form').addEventListener('submit', (e) => {
     e.preventDefault;
     const zip = document.getElementById('zip').value;
 
