@@ -1,4 +1,4 @@
-const storage = new Storage();
+const storage = new WeatherStorage();
 const weatherLocation = storage.getLocationData();
 
 const weather = new Weather(weatherLocation.zip);

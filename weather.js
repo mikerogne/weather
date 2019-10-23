@@ -14,7 +14,6 @@ class Weather {
     }
 
     changeLocation(zip) {
-        this.zip = zip
+        this.zip = zip;
     }
-    
 }
