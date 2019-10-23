@@ -17,11 +17,11 @@ class UI {
         this.location.textContent = `${weather.name}`;
         this.desc.textContent = weather.weather[0].main;
         this.string.textContent = `${weather.main.temp}\u00B0F`;
-        this.humidity.textContent = `Humidity: ${weather.main.humidity}%`
-        this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`
-        this.windSpeed.textContent = `Wind Speed: ${weather.wind.speed} mph`
-        this.windDirection.textContent = `Wind Direction: ${windDirectionFromDegrees(weather.wind.deg)}`
-        this.sunrise.textContent = `Sunrise: ${getTime(weather.sys.sunrise)}`
-        this.sunset.textContent = `Sunset: ${getTime(weather.sys.sunset)}`
+        this.humidity.textContent = `Humidity: ${weather.main.humidity}%`;
+        this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
+        this.windSpeed.textContent = `Wind Speed: ${weather.wind.speed} mph`;
+        this.windDirection.textContent = `Wind Direction: ${windDirectionFromDegrees(weather.wind.deg)}`;
+        this.sunrise.textContent = `Sunrise: ${getTime(weather.sys.sunrise)}`;
+        this.sunset.textContent = `Sunset: ${getTime(weather.sys.sunset)}`;
     }
 }
