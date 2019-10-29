@@ -1,34 +1,13 @@
-const storage = new WeatherStorage();
-const weatherLocation = storage.getLocationData();
+export function getTime(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours();
+    let minutes = "0" + date.getMinutes();
 
-const weather = new Weather(weatherLocation.zip);
-const ui = new UI();
-
-// Get weather on DOM load
-document.addEventListener('DOMContentLoaded', getWeather);
-
-document.getElementById('w-form').addEventListener('submit', (e) => {
-    e.preventDefault;
-    const zip = document.getElementById('zip').value;
-
-    weather.changeLocation(zip);
-    storage.setLocationData(zip);
-    getWeather();
-
-    // JQuery!
-    $('#locModal').modal('hide');
-});
-
-function getWeather() {
-    weather.getWeather()
-        .then(results => {
-            ui.paint(results);
-            console.log(results);
-        })
-        .catch(err => console.log(err));
+    // Will display time in 10:30 format
+    return hours + ':' + minutes.substr(-2);
 }
 
-function windDirectionFromDegrees(deg) {
+export function windDirectionFromDegrees(deg) {
     if (deg >= 11.25 && deg <= 33.75) {
         return 'NNE';
     }
@@ -75,13 +54,4 @@ function windDirectionFromDegrees(deg) {
         return 'NNW';
     }
     return 'N';
-}
-
-function getTime(timestamp) {
-    let date = new Date(timestamp * 1000);
-    let hours = date.getHours();
-    let minutes = "0" + date.getMinutes();
-
-    // Will display time in 10:30 format
-    return hours + ':' + minutes.substr(-2);
 }
